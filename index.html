@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form id="loginForm" action="" method="">
+        <fieldset>
+            <div><label for="title">Book Title: </label>
+                <input required type="text" id="title" placeholder="Book...">
+            </div>
+            
+            <div>
+                <label for="author">Book Author: </label>
+                <input required type="text" id="author" placeholder="Author...">
+            </div>
+            <div>
+                <label for="pages">Number of Pages: </label>
+                <input required type="number" id="pages" placeholder="Pages...">
+            </div>
+            <div>
+                <label for ="read">Read?    </label>
+                <select required id="read">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <button type="submit">Add Book</button>
+            <button type="reset">Clear Form</button>
+        </fieldset>
+    </form>
+    <ul id="shelfUI">
+    </ul>
+    <button id="delete">delete book</button>
+</body>
+<script src="javascript.js">
+
+</script>
+
+</html>
