@@ -30,7 +30,7 @@ const myLibrary = [];
         renderShelf();
     }
     function renderShelf(){
-        clearShelf(myLibrary);
+        clearShelf(shelf);
         for (let i = 0; i<myLibrary.length;i++){
             let visual = document.createElement("li");
             visual.dataset.index = i;
@@ -38,7 +38,7 @@ const myLibrary = [];
             shelf.append(visual);
         }
     }
-    function clearShelf(myLibrary){
+    function clearShelf(parent){
         while (parent.firstChild) {
             parent.removeChild(parent.firstChild);
         }
@@ -58,4 +58,4 @@ const myLibrary = [];
     addBookToLibrary(harryPotter);
     addBookToLibrary(harryPotter);
     addBookToLibrary(harryPotter);
-    renderLibrary();
+    renderShelf();
