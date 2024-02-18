@@ -6,37 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <form id="loginForm" action="" method="">
-        <fieldset>
-            <div><label for="title">Book Title: </label>
-                <input required type="text" id="title" placeholder="Book...">
-            </div>
-            
-            <div>
-                <label for="author">Book Author: </label>
-                <input required type="text" id="author" placeholder="Author...">
-            </div>
-            <div>
-                <label for="pages">Number of Pages: </label>
-                <input required type="number" id="pages" placeholder="Pages...">
-            </div>
-            <div>
-                <label for ="read">Read?    </label>
-                <select required id="read">
-                    <option value="true">Yes</option>
-                    <option value="false">No</option>
-                </select>
-            </div>
-            <button type="submit">Add Book</button>
-            <button type="reset">Clear Form</button>
-        </fieldset>
-    </form>
+    <button onclick="openForm()">Add Book</button>
+    <dialog>
+
+        <form id="loginForm" action="" method="">
+            <fieldset>
+                <div><label for="title">Book Title: </label>
+                    <input required minlength="1" type="text" id="title" placeholder="Book...">
+                </div>
+
+                <div>
+                    <label for="author">Book Author: </label>
+                    <input required minlength="1" type="text" id="author" placeholder="Author...">
+                </div>
+                <div>
+                    <label for="pages">Number of Pages: </label>
+                    <input required minlength="1" type="number" id="pages" placeholder="Pages...">
+                </div>
+                <div>
+                    <label for="read">Read? </label>
+                    <select required id="read">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <button type="submit">Add Book</button>
+                <button type="reset">Clear Form</button>
+                <button type="button" id="close" onclick="closeForm()">Close Form</button>
+            </fieldset>
+        </form>
+    </dialog>
+    <dialog id="bookView">
+        <p>Title: <span class="title">Title</span></p>
+        <p>Author: <span class="author">Author</span></p>
+        <p>Pages: <span class="pages">Pages</span></p>
+        <p>Read? <span class="read">Read</span></p>
+        <button class="toggleRead" type="button" onclick="toggleRead()">Toggle Read</button>
+        <button type="button" onclick="closeBook()">Close</button>
+        <button class="delete">Delete Book</button>
+        
+    </dialog>
+
     <ul id="shelfUI">
     </ul>
-    <button id="delete">delete book</button>
 </body>
 <script src="javascript.js">
 

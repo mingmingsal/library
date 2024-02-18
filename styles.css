@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+html {
+    font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 30px;
+}
+li {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+}
+li p {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    
+}
+li button {
+    width: 100px;
+    height: 35px;
+}
+
+dialog > p> span {
+    font-weight: 500;
+}
