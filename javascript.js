@@ -23,16 +23,14 @@ const myLibrary = [];
     Book.prototype.info = function () {
             return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "has been read" : "not read yet"}`
         }
-
+        
+    //Delete all Children and Add all Books in Library to Shelf
     function addBookToLibrary(book){
         myLibrary.push(book);
-        addBookToShelf(book);
-    }
-    function addBookToShelf(book){
-
+        renderShelf();
     }
     function renderShelf(){
-        
+        clearShelf(myLibrary);
         for (let i = 0; i<myLibrary.length;i++){
             let visual = document.createElement("li");
             visual.dataset.index = i;
@@ -40,21 +38,14 @@ const myLibrary = [];
             shelf.append(visual);
         }
     }
-    function clearShelf(){
-        
+    function clearShelf(myLibrary){
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
     }
-    //Destroy book at index and shift, update data attributes of books in DOM
     function deleteBook(a){
-            console.log(`Deleting book at ${a}`);
-            delete myLibrary[a];
-            for(let i = a;i<myLibrary.length;i++){
-                myLibrary[i]=myLibrary[i+1];
-                shelf.children[i].dataset.index = i-1;
-                
-            }
-            shelf.removeChild(shelf.children[a]);
-            myLibrary.pop();
-        
+            myLibrary.splice(a,1);
+            renderShelf();
     }
     const harryPotter = new Book("The Hobbit", "Hrr ccx", "23", true);
 
